@@ -1,0 +1,23 @@
+const fakeFieldValues: Record<string, string> = {
+  // Basic fields
+  dob: '1989-06-30',
+  name: 'kevin',
+  email: 'kevin@example.com',
+  language: 'english',
+
+  // Mocked form B fields
+  b1: 'banana',
+  b2: 'grape',
+
+  // Mocked form C fields
+  c1: '3.14',
+  c2: 'yes',
+
+  // A few extras for transform testing
+  birthday: '2000-01-01',
+  uppercaseTest: 'shouting',
+  numberAsString: '42',
+}
+
+
+export default fakeFieldValues;

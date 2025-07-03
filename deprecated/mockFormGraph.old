@@ -1,0 +1,73 @@
+export const mockFormGraph = [
+  {
+    id: 'formA',
+    name: 'FormA',
+    fields: [
+      { id: 'name', label: 'Full Name', type: 'text' },
+      { id: 'dob', label: 'Date of Birth', type: 'date' },
+      { id: 'email', label: 'Email Address', type: 'email' },
+      { id: 'street address', label: 'Street Address', type: 'text' },
+      { id: 'city', label: 'City', type: 'text' },
+      { id: 'zip', label: 'ZIP Code', type: 'text' },
+      { id: 'mobile phone', label: 'Favorite Fruit', type: 'text' },
+    ],
+    dependsOn: [],
+  },
+  {
+    id: 'formB',
+    name: 'FormB',
+    fields: [
+      { id: 'language', label: 'Preferred Language', type: 'text' },
+      { id: 'country', label: 'Country', type: 'text' },
+      { id: 'employed', label: 'Employed y/n', type: 'text' },
+      { id: 'employer', label: 'Employer', type: 'text' },
+      { id: 'business type', label: 'Business Type', type: 'text' },
+      { id: 'work phone', label: 'Work Phone', type: 'text' },
+
+    ],
+    dependsOn: ['formA'],
+  },
+  {
+    id: 'formC',
+    name: 'FormC',
+    fields: [
+     { id: 'name', label: 'Full Name', type: 'text' },
+     { id: 'dob', label: 'Date of Birth', type: 'date' },
+     { id: 'email', label: 'Email Address', type: 'email' },
+     { id: 'employer', label: 'Employer', type: 'text' },
+     { id: 'date employed', label: 'Date Employed', type: 'date' },
+    ],
+    dependsOn: ['formA'],
+  },
+    {
+    id: 'formD',
+    name: 'FormD',
+    fields: [
+      { id: 'employed', label: 'Employed y/n', type: 'text' },
+      { id: 'employer', label: 'Employer', type: 'text' },
+      { id: 'business type', label: 'Business Type', type: 'text' },
+      { id: 'work phone', label: 'Work Phone', type: 'text' },
+
+    ],
+    dependsOn: ['formB'],
+  },
+   {
+    id: 'formE',
+    name: 'FormE',
+    fields: [
+      { id: 'c1', label: 'Calculated Age', type: 'number' },
+      { id: 'c2', label: 'Language (Uppercase)', type: 'text' },
+    ],
+    dependsOn: ['formC'],
+  },
+     {
+    id: 'formF',
+    name: 'FormF',
+    fields: [
+      { id: 'first Name', label: 'First Name', type: 'text' },
+      { id: 'last Name', label: 'Last Name', type: 'text' },
+      { id: 'employment length', label: 'Employment Length', type: 'text' },
+    ],
+    dependsOn: ['formC'],
+  },
+]

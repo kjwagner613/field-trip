@@ -1,0 +1,30 @@
+import { useFormGraph } from '../hooks/useFormGraph'
+
+const FormList = () => {
+  const { formGraph } = useFormGraph()
+
+  return (
+    <div>
+      <h2>📄 Form Graph</h2>
+      {formGraph.map((form) => (
+        <div key={form.id} style={{ marginBottom: '1rem' }}>
+          <strong>{form.name}</strong>
+          <ul>
+            {form.fields.map((field) => (
+              <li key={field.id}>
+                {field.label} ({field.type})
+              </li>
+            ))}
+          </ul>
+          {form.dependsOn.length > 0 && (
+            <p style={{ fontStyle: 'italic' }}>
+              Depends on: {form.dependsOn.join(', ')}
+            </p>
+          )}
+        </div>
+      ))}
+    </div>
+  )
+}
+
+export default FormList

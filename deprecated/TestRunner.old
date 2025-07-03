@@ -1,0 +1,23 @@
+// File: src/utils/TestRunner.tsx
+import React from 'react'
+import { useMappings } from '../context/MappingContext'
+import { runPrefill } from './runPrefills'
+
+export const TestRunner = ({ targetFormId }: { targetFormId: string }) => {
+  const { mappings } = useMappings()
+  const currentMappings = mappings[targetFormId] ?? []
+  const output = runPrefill(currentMappings)
+
+  return (
+    <div style={{ marginTop: '2rem' }}>
+      <h4>🧪 Prefill Output for {targetFormId}</h4>
+      <ul>
+        {Object.entries(output).map(([fieldId, value]) => (
+          <li key={fieldId}>
+            <strong>{fieldId}:</strong> {value}
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
