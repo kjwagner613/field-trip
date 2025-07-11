@@ -8,7 +8,7 @@ import { FormDataProvider } from '../src/contexts/FormDataContext'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <FormDataProvider graph={[]}>
+    <FormDataProvider>
       <MappingProvider>
         <App />
       </MappingProvider>

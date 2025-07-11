@@ -1,5 +1,3 @@
-import React from 'react'
-
 interface FormSwitcherProps {
   formIds: string[]
   selectedFormId: string
